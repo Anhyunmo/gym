@@ -10,7 +10,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
+import java.util.Date;
+
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -27,11 +28,11 @@ public class Order {
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "start_date")
-    private Timestamp startDate;
+    private Date startDate;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "finish_date")
-    private Timestamp finishDate;
+    private Date finishDate;
 
     @ManyToOne
     @JoinColumn(name = "gym_id", foreignKey = @ForeignKey(name="FK_GYM_TB_ORDER"))
@@ -45,11 +46,11 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    public Order(Gym gym, Member member, Timestamp startDate, Timestamp finishDate, Status status){
+    public Order(Gym gym, Member member, Date startDate, Date finishDate, Status status){
         setOrder(gym,member,startDate,finishDate,status);
     }
 
-    public Order setOrder(Gym gym, Member member, Timestamp startDate, Timestamp finishDate, Status status){
+    public Order setOrder(Gym gym, Member member, Date startDate, Date finishDate, Status status){
         this.gym = gym;
         this.member = member;
         this.startDate = startDate;
