@@ -1,5 +1,6 @@
 package com.example.gym.domain;
 
+
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -18,11 +19,11 @@ import java.util.List;
 @Entity
 @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler"})
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-public class Member {
+public class Gym {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column
     private String name;
@@ -31,15 +32,33 @@ public class Member {
     private int phone;
 
     @Column
-    private String password;
+    private String address;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "member")
+    @Column
+    private double width;
+
+    @Column
+    private double height;
+
+    @Column
+    private int price;
+
+    @Column
+    private String img;
+
+    @OneToMany(mappedBy = "gym")
     private List<Order> orders;
 
-    public Member setMember(String name, int phone, String password){
+    public Gym setGym(String name, int phone, String address, double width, double height,
+                      int price, String img){
         this.name = name;
         this.phone = phone;
-        this.password = password;
+        this.address = address;
+        this.width = width;
+        this.height = height;
+        this.price = price;
+        this.img = img;
+
         return this;
     }
 
