@@ -19,6 +19,12 @@ public class GymController {
         return gymService.findAll();
     }
 
+    @GetMapping("/{id}")
+    public Gym getList(@PathVariable("id") int id){
+        return gymService.findById(id);
+    }
+
+
     @PostMapping
     public Gym setGym(@RequestBody Gym gym){
         return gymService.saveGym(gym);
