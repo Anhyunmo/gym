@@ -14,12 +14,6 @@ public interface GymMapper {
 
 
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "name", ignore = true)
-    @Mapping(target = "phone", ignore = true)
-    @Mapping(target = "width" , ignore = true)
-    @Mapping(target = "height", ignore = true)
-    @Mapping(target = "price", ignore = true)
-    @Mapping(target = "img", ignore = true)
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
         nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
     Gym insertRequestToGym(GymInsertDTO gymInsertDTO);

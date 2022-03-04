@@ -1,6 +1,5 @@
 package com.example.gym.dto;
 
-
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,9 +9,12 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Data
-public class GymInsertDTO {
+@Builder
+public class GymUpdateDTO {
+
+    @NotNull
+    private int id;
 
     @NotNull
     private String name;
@@ -27,5 +29,4 @@ public class GymInsertDTO {
     private double height;
 
     private String img;
-
 }
