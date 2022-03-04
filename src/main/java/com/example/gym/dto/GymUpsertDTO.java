@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Data
-public class GymInsertDTO {
+public class GymUpsertDTO {
 
     @NotNull
     private String name;

@@ -1,8 +1,7 @@
 package com.example.gym.controller;
 
 import com.example.gym.domain.Gym;
-import com.example.gym.dto.GymInsertDTO;
-import com.example.gym.dto.GymUpdateDTO;
+import com.example.gym.dto.GymUpsertDTO;
 import com.example.gym.mapper.GymMapper;
 import com.example.gym.service.GymService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,24 +29,23 @@ public class GymController {
 
 
     @PostMapping
-    public Gym setGym(@Valid @RequestBody GymInsertDTO req){
+    public Gym setGym(@Valid @RequestBody GymUpsertDTO req){
         Gym gym = GymMapper.INSTANCE.insertRequestToGym(req);
 
         return gymService.saveGym(gym);
     }
 
     @PutMapping("/{id}")
-    public Gym setGym(@PathVariable("id") int id, @Valid @RequestBody GymUpdateDTO req){
+    public Gym setGym(@PathVariable("id") int id, @Valid @RequestBody GymUpsertDTO req){
+
         Gym gym = gymService.findById(id);
+        GymMapper.INSTANCE.updateRequestToGym(req, gym);
 
-//        gym.setName(gymService.findById(req.getId()));
+        return gymService.saveGym(gym);
 
-        gymService.saveGym(gym);
-
-        return gym;
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void deleteGym(@PathVariable("id") int id){
         gymService.deleteGym(id);
     }
