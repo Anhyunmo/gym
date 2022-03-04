@@ -29,14 +29,14 @@ public class GymController {
 
 
     @PostMapping
-    public Gym setGym(@Valid @RequestBody GymUpsertDTO req){
+    public Gym setInsertGym(@Valid @RequestBody GymUpsertDTO req){
         Gym gym = GymMapper.INSTANCE.insertRequestToGym(req);
 
         return gymService.saveGym(gym);
     }
 
     @PutMapping("/{id}")
-    public Gym setGym(@PathVariable("id") int id, @Valid @RequestBody GymUpsertDTO req){
+    public Gym setUpdateGym(@PathVariable("id") int id, @Valid @RequestBody GymUpsertDTO req){
 
         Gym gym = gymService.findById(id);
         GymMapper.INSTANCE.updateRequestToGym(req, gym);
