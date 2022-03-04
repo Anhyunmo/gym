@@ -1,6 +1,8 @@
 package com.example.gym.controller;
 
 import com.example.gym.domain.Gym;
+import com.example.gym.dto.GymInsertDTO;
+import com.example.gym.mapper.GymMapper;
 import com.example.gym.service.GymService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +28,9 @@ public class GymController {
 
 
     @PostMapping
-    public Gym setGym(@RequestBody Gym gym){
+    public Gym setGym(@RequestBody GymInsertDTO req){
+        Gym gym = GymMapper.INSTANCE.insertRequestToGym(req);
+
         return gymService.saveGym(gym);
     }
 
