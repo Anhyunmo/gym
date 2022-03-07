@@ -14,9 +14,6 @@ import lombok.NoArgsConstructor;
 public class MemberLoginDTO {
 
     @NotNull
-    private String name;
-
-    @NotNull
     private String email;
 
     @NotNull
