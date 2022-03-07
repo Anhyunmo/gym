@@ -18,6 +18,7 @@ import java.util.Date;
 @Builder
 @Data
 @Entity
+@Table(name = "orders")
 @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler"})
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Order {
@@ -46,18 +47,18 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    public Order(Gym gym, Member member, Date startDate, Date finishDate, Status status){
-        setOrder(gym,member,startDate,finishDate,status);
-    }
-
-    public Order setOrder(Gym gym, Member member, Date startDate, Date finishDate, Status status){
-        this.gym = gym;
-        this.member = member;
-        this.startDate = startDate;
-        this.finishDate = finishDate;
-        this.status = status;
-        return this;
-    }
+//    public Order(Gym gym, Member member, Date startDate, Date finishDate, Status status){
+//        setOrder(gym,member,startDate,finishDate,status);
+//    }
+//
+//    public Order setOrder(Gym gym, Member member, Date startDate, Date finishDate, Status status){
+//        this.gym = gym;
+//        this.member = member;
+//        this.startDate = startDate;
+//        this.finishDate = finishDate;
+//        this.status = status;
+//        return this;
+//    }
 
     public enum Status{
         사용완료,

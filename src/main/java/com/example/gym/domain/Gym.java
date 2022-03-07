@@ -49,17 +49,17 @@ public class Gym {
     @OneToMany(mappedBy = "gym")
     private List<Order> orders;
 
-    public Gym setGym(String name, int phone, String address, double width, double height,
-                      int price, String img){
-        this.name = name;
-        this.phone = phone;
-        this.address = address;
-        this.width = width;
-        this.height = height;
-        this.price = price;
-        this.img = img;
-
-        return this;
-    }
+//    public Gym setGym(String name, int phone, String address, double width, double height,
+//                      int price, String img){
+//        this.name = name;
+//        this.phone = phone;
+//        this.address = address;
+//        this.width = width;
+//        this.height = height;
+//        this.price = price;
+//        this.img = img;
+//
+//        return this;
+//    }
 
 }

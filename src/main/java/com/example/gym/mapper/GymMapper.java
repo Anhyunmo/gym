@@ -18,6 +18,8 @@ public interface GymMapper {
     Gym insertRequestToGym(GymUpsertDTO gymInsertDTO);
 
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "gym", ignore = true)
+    @Mapping(target = "member", ignore = true)
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
             nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
     Gym updateRequestToGym(GymUpsertDTO gymInsertDTO, @MappingTarget Gym gym);

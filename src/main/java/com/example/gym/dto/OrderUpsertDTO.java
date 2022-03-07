@@ -25,7 +25,9 @@ public class OrderUpsertDTO {
     @NotNull
     private Order.Status status;
 
-    private List<MemberUpsertDTO> gymId;
+    @NotNull
+    private int gymId;
 
-    private List<GymUpsertDTO> memberId;
+    @NotNull
+    private int memberId;
 }

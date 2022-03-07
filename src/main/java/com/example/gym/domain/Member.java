@@ -36,11 +36,11 @@ public class Member {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "member")
     private List<Order> orders;
 
-    public Member setMember(String name, int phone, String password){
-        this.name = name;
-        this.phone = phone;
-        this.password = password;
-        return this;
-    }
+//    public Member setMember(String name, int phone, String password){
+//        this.name = name;
+//        this.phone = phone;
+//        this.password = password;
+//        return this;
+//    }
 
 }
