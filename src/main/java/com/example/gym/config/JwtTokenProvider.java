@@ -31,7 +31,7 @@ public class JwtTokenProvider { // JWT 토큰을 생성 및 검증 모듈
         secretKey = Base64.getEncoder().encodeToString(secretKey.getBytes());
     }
     // Jwt 토큰 생성
-    public String createToken(Long id, String email, String memberName) {
+    public String createToken(Integer id, String email, String memberName) {
         Map<String, Object> claims = new LinkedHashMap<>();
         claims.put("userSeq", id);
         claims.put("userId", email);

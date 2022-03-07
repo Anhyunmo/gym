@@ -22,6 +22,10 @@ public class MemberService {
         return memberRepository.findById(id).orElseThrow(NoSuchElementException::new);
     }
 
+    public Member findByEmail(String email){
+        return memberRepository.findByEmail(email).orElseThrow(NoSuchElementException::new);
+    }
+
     public Member saveMember(Member member){
         return memberRepository.save(member);
     }
