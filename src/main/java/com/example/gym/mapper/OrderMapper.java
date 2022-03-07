@@ -9,7 +9,8 @@ public interface OrderMapper {
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "status", ignore = true)
-    @Mapping(target = "gym_id", source = "gymId")
+    @Mapping(target = "gym.id", source = "gymId")
+    @Mapping(target = "member.id", source = "memberId")
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
     nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
     Order orderInsertRequestToOrder(OrderUpsertDTO orderUpsertDTO);
@@ -17,7 +18,9 @@ public interface OrderMapper {
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "status", ignore = true)
-    @Mapping(target = "gym_id", source = "gymId")
+    @Mapping(target = "gym.id", source = "id")
+    @Mapping(target = "gym.id", source = "gymId")
+    @Mapping(target = "member.id", source = "memberId")
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
             nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
     Order orderUpdateRequestToOrder(OrderUpsertDTO orderUpsertDTO);
