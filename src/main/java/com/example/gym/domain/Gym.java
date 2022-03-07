@@ -46,8 +46,8 @@ public class Gym {
     @Column
     private String img;
 
-    @OneToMany(mappedBy = "gym")
-    private List<Order> orders;
+//    @OneToMany(mappedBy = "gym")
+//    private List<Order> orders;
 
 //    public Gym setGym(String name, int phone, String address, double width, double height,
 //                      int price, String img){

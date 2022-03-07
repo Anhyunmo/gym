@@ -20,4 +20,5 @@ public interface MemberMapper {
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
             nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
     Member updateRequestToMember(MemberUpsertDTO memberUpsertDTO, @MappingTarget Member member);
+
 }

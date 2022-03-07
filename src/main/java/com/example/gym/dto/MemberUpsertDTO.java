@@ -8,8 +8,13 @@ public class MemberUpsertDTO {
     private String name;
 
     @NotNull
+    private String email;
+
+    @NotNull
     private int phone;
 
     @NotNull
     private String password;
+
+
 }

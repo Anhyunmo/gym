@@ -28,6 +28,9 @@ public class Member {
     private String name;
 
     @Column
+    private String email;
+
+    @Column
     private int phone;
 
     @Column
